@@ -1,0 +1,16 @@
+Degree of relation=no. of attributes
+cardinality of relation= no. of records
+domain - set of permissible values of an attribute.
+
+ PRIMARY KEY
+*used to identify records
+*duplicate value not allowed
+*NULL value not allowed
+*table can have at most one primary key.
+*if two or more attributes are used to create primary key than it is known as composite key.
+
+  FOREIGN KEY
+*used to create relationship between two tables.
+*NULL and duplicate values are allowed
+*Allowed values are those which are present in attribute to which foreign key is related. 
+*one table can have more than one FK

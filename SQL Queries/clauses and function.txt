@@ -1,0 +1,93 @@
+IN CLAUSE
+
+* matches attribute value of each record in given list and returns true if found...
+Q1. Display student name who secured marks either 70,80 or 90.
+Sol. Select name
+       From student
+       where marks IN(70,80,90);
+                OR
+       Select name
+       From student
+       where marks=70 or
+                 marks= 80 or
+                 marks= 90 ;
+
+Q2. Display student name who secured marks other than 70,80,90.
+sol. Select name
+       From student
+       where marks NOT IN(70,80,90);
+
+         DISTINCT CLAUSE
+
+*gives unique values of an attribute
+Q1. Display names of student without recpetition.
+sol. Select distinct name
+      From student;
+
+      CHECKING NULL VALUES
+
+Q1. Display student details where email id is missing.
+sol. Select *
+      From Student
+      where email  IS NULL;
+
+Q2. Display student deatils who have provided email id.
+sol.  Select *
+       From student
+       where email IS NOT NULL;
+ 
+     AGGREGATE FUNCTIONS
+
+1. max(attribute)
+2. min(attribute)              ignore null values
+3. sum(attribute)
+4. avg(attribute)
+5.count(attribte)
+6. count(*) gives total no. of records
+
+Q1. Display Maximum Marks obtained by student.
+sol. Select max(marks)
+       From student;
+
+Q2. Display student details of topper.
+sol. Select*
+       From student
+      where marks =(select max(marks)From Student)
+
+Q3. Display average marks obtained by student of class 12.
+sol. Select avg(marks)
+      From Student where class=12.
+
+Q4. display strength of school.
+sol. Select count(*) from student;
+
+Q5.Display strength of class 12-A.
+sol. Select count(*)
+       From student where class=12
+      and section='A';
+
+Q6. Display details of students of class 12 who secured marks greater than average marks of class.
+sol. Select *
+       From student
+      where marks>(select avg(marks)
+                             From student 
+                             where class=12)
+      and class=12;
+
+       GROUP BY CLAUSE
+
+Q1. Display total students class wise.
+sol. Select class,count(*)
+      From student
+      Group by class;
+
+Q2.Display total students class wise of senior wing.
+sol. Select class,count(*)
+      From student
+     Group by class
+     Having class IN(9,10,11,12);
+             or
+     Select class,count(*)
+     From student where class IN(9,10,11,12)
+     Group by class;
+

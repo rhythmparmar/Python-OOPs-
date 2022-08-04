@@ -1,0 +1,62 @@
+ORDER BY CLAUSE
+# used to display records in sorted order of column values.
+# default order is ascending.
+# keyword used- ASC or DESC.
+
+Q1. display details in dictionary order of names.
+sol. Select*
+       From Student
+       Order by name;
+
+Q2. Display details in reverse dictionary order of names.
+sol. Select*
+      From Student
+      Order by name desc;
+
+Q3. Display details in dictionary order of names and descending order of marks.
+sol. Select*
+      From student
+      Order by name,marks desc;
+
+Q4. Display student name in reverse dictonary order of names of those students who scored marks greater than 70.
+sol. Select name
+      From student
+      Where marks> 70
+      Order by name desc;
+
+
+PATTERN MATCHING CLAUSE - LIKE
+
+# Wildcard characters
+   1. % - zero or more occurances.
+   2. _ - one character.
+  
+Q1. display student id name of students whose name:-
+      (a). starts with A 
+      (b). ends with A
+      (c). contains A at any position.
+      (d). contains A at second position.
+      (e). contains A at second last position.
+      (f).  has at least 4 characters.
+      (g). has 4 characters.
+sol. (a). Select studid, name from student where name Like ' A%'; 
+      (b). Select studid, name from student where name Like ' %A';
+      (c). Select studid, name from student where name Like ' %A%';
+      (d). Select studid, name from student where name Like ' _A%';
+      (e). Select studid, name from student where name Like ' %A_'; 
+      (f). Select studid, name from student where name Like ' _ _ _ _%';
+      (g). Select studid, name from student where name Like ' _ _ _ _';
+
+BETWEEN START AND END CLAUSE(INCLUSIVE)
+
+Q1. Display student id,name and marks of those student who secured marks in range 90 - 95.
+sol. Select studid,name,marks
+      From student 
+      where marks between 90 and 95;
+                         or
+     Select studid,name,marks
+     From student
+     where marks >=90 and marks <=95;
+
+  
+    

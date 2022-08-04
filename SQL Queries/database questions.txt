@@ -1,0 +1,38 @@
+Q1. Create database named school in mysql
+Sol. Create database school ;
+
+Q2. Command to enter in school database.
+Sol. use school ;
+
+Q3. Create student table having following details.
+  Attribute       Constraint
+       studid            Primary Key
+       name            Not Null
+       class             1-12 
+       section          Default value A
+       marks            0-100
+    email    duplicate not allowed/Null  
+               alowed
+
+Sol. Create Table Student
+( studid    int Not Null Primary Key,
+  name    varchar(30) Not Null,
+  class     int check(class between 1 and 12),
+  section char Default 'A',
+  marks int check(marks between 0 and 100),
+  email    varchar(30) unique );
+
+Q4. Add Records in table Student
+sol. Insert into Student Values(1,'Ram',11,'B',95,'r@gamil.com');
+ 
+Q5. Add Student Record having name- Mohan ,id-2,class-12
+Sol. Insert into Student ( Studid, name, class) values(2,'Mohan',12);
+                                    or
+      Insert into Student values(2,'Mohan',12,Null,Null,Null);
+
+Q6. List student details.
+Sol. Select * From Student ;
+
+Q7. List id and name of class 12 Student.
+Sol. Select studid,name From Student where class=12; 
+ 
